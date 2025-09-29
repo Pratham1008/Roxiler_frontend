@@ -1,46 +1,72 @@
-# Getting Started with Create React App
+# Store Rating Application: Client-Side Interface
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+This repository contains the source code for the client-side component of the Store Rating application. It is a sophisticated, responsive, and full-featured user interface developed utilizing React and TypeScript. The design facilitates a fluid user experience for interacting with the backend API, presenting distinct dashboards and functionalities that are contingent upon the authenticated user's role.
 
-## Available Scripts
+## Core Features
+- **Modular Architecture**: The application is structured utilizing a component-based architecture, a paradigm that enhances code reusability and simplifies long-term maintenance.
 
-In the project directory, you can run:
+- **Role-Based User Interface**: The user interface is rendered dynamically, presenting customized dashboards and functionalities tailored to the specific roles of Administrator, Store Owner, or standard User.
 
-### `npm start`
+- **Secure Authentication Protocol**: The application incorporates dedicated pages for user login, registration, and password modification, ensuring a secure and intuitive authentication process.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Centralized State Management**: Global application state, particularly for user authentication, is managed through the React Context API.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Interactive Rating System**: A dynamic star-based component allows users to submit and update store ratings efficiently.
 
-### `npm test`
+- **Dynamic Data Rendering**: The system fetches and displays lists of users, stores, and ratings, incorporating capabilities for data filtering and searching.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Responsive Design Implementation**: The user interface has been developed with Tailwind CSS to ensure full responsiveness and an optimal viewing experience across a wide range of devices, from mobile platforms to desktop computers.
 
-### `npm run build`
+- **System Notifications**: User feedback for critical operations, such as successful authentication or data submission, is provided through non-intrusive toast notifications.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technology Stack
+The frontend of this application is constructed with the following technologies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Primary Library**: React (initialized with Create React App)  
+- **Programming Language**: TypeScript  
+- **Styling Framework**: Tailwind CSS  
+- **Navigation**: React Router for client-side routing  
+- **API Client**: Axios for handling HTTP requests to the backend service  
+- **Iconography**: Lucide React  
+- **User Notifications**: React Hot Toast  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Setup and Execution Guide
 
-### `npm run eject`
+### System Prerequisites
+- Installation of Node.js (version 16 or a subsequent release is recommended).
+- The npm package manager.
+- A running instance of the corresponding backend server on `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Installation and Configuration
+1. **Navigate to the Frontend Directory**: From the project's root directory, change the current directory to the frontend subdirectory.
+   ```bash
+   cd frontend
+    ````
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Install Project Dependencies**: Execute the following command to install all the required packages as specified in the `package.json` file.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   ```bash
+   npm install
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. **Initiate the Development Server**: This command will compile the application and start a local development server.
 
-## Learn More
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   The application will then be accessible at `http://localhost:3001` or the next available port indicated in the terminal output. The server supports hot-reloading, which automatically reflects code modifications in the browser.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Available Execution Scripts
+
+Within the frontend project directory, the following commands are available for execution:
+
+* `npm start`: Executes the application in a development environment.
+* `npm test`: Initiates the test runner in an interactive watch mode.
+* `npm run build`: Compiles and bundles the application for a production environment into the build directory.
+* `npm run eject`: A permanent operation that removes the single build dependency and exposes the underlying configuration files.
+
+## API Service Integration
+
+The frontend application is configured to interface with the NestJS backend API, which is presumed to be operational at `http://localhost:3000`. All asynchronous data requests are managed via a centralized Axios instance, which is configured in the `src/services/api.ts` file.
